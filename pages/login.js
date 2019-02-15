@@ -7,7 +7,10 @@ import {
   ImageBackground,
   Image,
   KeyboardAvoidingView,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+  Dimensions
 } from 'react-native';
 import Wallpaper from './../components/loginScreen/Wallpaper';
 import { TextField } from 'react-native-material-textfield';
@@ -18,12 +21,30 @@ export default class AnimationButton extends Component {
     phone : ""
   };
 
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    let {height, width} = Dimensions.get('window');
+    this.setState({
+      height : height - 20, 
+      width : width
+    });
+  }
+
   render() {
     return (
+      <ScrollView>
+        <KeyboardAvoidingView behavior={Platform.select({android: "padding", ios: 'padding'})}
+         enabled>
       <Wallpaper>
-        
         <View style={{
-          flex : 1
+          height : this.state.height
+        }}>
+           <View style={{
+             display : "flex",
+           flex : 1
         }}>
           <View style={{
             flex : 0.1
@@ -120,8 +141,10 @@ export default class AnimationButton extends Component {
             
           </View>
         </View>
-       
+        </View> 
       </Wallpaper>
+      </KeyboardAvoidingView>
+      </ScrollView>
     );
   }
 }
