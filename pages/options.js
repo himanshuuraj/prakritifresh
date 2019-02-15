@@ -142,7 +142,13 @@ export default class Options extends Component {
             margin : 10
         }}>
           {
-            listOfItems.map((item, index) => <View style={{
+            listOfItems.map((item, index) => <TouchableHighlight
+            onPress = {e => {
+                
+            }}
+            style={{
+                display : "flex",
+                flexDirection : "row",
                 width: "50%",
                 padding : 10
               }}
@@ -165,7 +171,7 @@ export default class Options extends Component {
                   </Text>
                   </View>
                </Card>
-            </View>)
+            </TouchableHighlight>)
           }
         </View>
         <GestureRecognizer

@@ -12,9 +12,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import LoginScreen from "./components/loginScreen/LoginScreen";
 import Login from "./pages/login";
 import Options from "./pages/options";
-import {
-  KeyboardAvoidingView
-} from "react-native";
+import ItemList from "./pages/ItemList";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -26,7 +24,7 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-            <Options/>
+      <ItemList/>
     );
   }
 }
