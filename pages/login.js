@@ -91,6 +91,8 @@ export default class AnimationButton extends Component {
               <TextField
                 label='Phone number'
                 value={this.state.phone}
+                tintColor="rgb(0, 0, 0)"
+                baseColor="rgb(0, 0, 0)"
                 onChangeText={ (phone) => this.setState({ phone }) }
               />
               </View>
@@ -100,6 +102,8 @@ export default class AnimationButton extends Component {
               <TextField
                 label='Password'
                 value={this.state.phone}
+                tintColor="rgb(0, 0, 0)"
+                baseColor="rgb(0, 0, 0)"
                 onChangeText={ (phone) => this.setState({ phone }) }
               />
               </View>
@@ -109,14 +113,16 @@ export default class AnimationButton extends Component {
                 alignItems : "center"
               }}>
                 <TouchableOpacity
-                  onPress={e => {}}
+                  onPress={e => {
+                    this.props.moveToScreen("options");
+                  }}
                   style={{
                     padding : 10,
                     justifyContent : "center",
                     alignItems : "center",
                     backgroundColor : "green",
                     borderRadius : 5,
-                    width : "90%"
+                    width : "100%"
                   }}
                 >
                   <Text style={{
@@ -131,7 +137,7 @@ export default class AnimationButton extends Component {
                 alignItems : "center"
               }}>
                   <Text style={{
-                    color : "white"
+                    color : "black"
                   }}>Sign Up</Text>
               </TouchableOpacity>
           </View>

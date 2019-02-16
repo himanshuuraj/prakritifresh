@@ -106,18 +106,31 @@ export default class AnimationButton extends Component {
                 fontSize : 16
               }}>Vegetables</Text>
            </View>
-           <View style={{
-             flex : 0.25,
-             flexDirection : "row"
+           <TouchableHighlight style={{
+             display : "flex",
+             justifyContent : "center",
+             alignItems : "center",
+             flex : 0.125
+           }} onPress={e => {
+             this.setState({
+               showInput : false
+             })
            }}>
-           <Button transparent>
               <Icon style={{color : "white"}} name='ios-search' />
-            </Button>
-              <Button transparent>
+            </TouchableHighlight>
+            <TouchableHighlight style={{
+             display : "flex",
+             justifyContent : "center",
+             alignItems : "center",
+             flex : 0.125
+           }}
+           onPress={e => {
+             this.props.moveToScreen("cart");
+           }}
+           >
               <Icon style={{color : "white"}} name='ios-cart' />
-            </Button>
+            </TouchableHighlight>
            </View>
-        </View>
       <Content style={{
         margin : 10
       }}>
@@ -152,7 +165,7 @@ export default class AnimationButton extends Component {
                    <Text style={{
                      fontSize : 20,
                      fontWeight : "bold"
-                   }}>Vegetable Name</Text>
+                   }}>{item.displayName}</Text>
                     <Text style={{
                       fontSize : 18
                     }}>Rs. 40/kg</Text>
@@ -164,14 +177,12 @@ export default class AnimationButton extends Component {
                   justifyContent : "center",
                   alignItems : "center"
                 }}>
-                  <TouchableHighlight style={{
-                    marginLeft : 5
-                  }}>
+                  <TouchableHighlight 
+                  style={{}}>
                      <Icon style={{color : "green"}} name="ios-add-circle" />
                   </TouchableHighlight>
                    <Text>0</Text>
                    <TouchableHighlight style={{
-                    marginLeft : 5
                   }}>
                      <Icon style={{color : "red"}} name='ios-remove-circle' />
                   </TouchableHighlight>

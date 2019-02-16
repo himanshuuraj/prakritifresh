@@ -42,14 +42,14 @@ const listOfItems = [
         imageUrl : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjmFB2ACmK943cMM7_qr3AcvIRr6qvub-T73MW7pXwx4Q4e6q-Jw"
     },
     {
-        displayName : "Milk",
-        id : "milk",
+        displayName : "Dairy",
+        id : "dairy",
         imageUrl : "https://3.imimg.com/data3/DI/QN/MY-16252014/other-dairy-items-500x500.jpg"
     },
     {
-        displayName : "Pizza",
-        id : "pizza",
-        imageUrl : "https://recipes.timesofindia.com/photo/53110049.cms?imgsize=148092"
+        displayName : "Fruits",
+        id : "fruits",
+        imageUrl : "https://www.snopes.com/tachyon/2018/04/fruits_feature.jpg?resize=200,200&quality=40"
     }
 ]
 
@@ -144,7 +144,7 @@ export default class Options extends Component {
           {
             listOfItems.map((item, index) => <TouchableHighlight
             onPress = {e => {
-                
+                this.props.moveToScreen("itemList");
             }}
             style={{
                 display : "flex",
